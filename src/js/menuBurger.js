@@ -18,7 +18,9 @@ if (menuBtnClose && mobileMenu) {
 
 // переход по ссылкам-якорям
 
-const links = document.querySelectorAll(".mobile-menu__nav-link");
+const links = document.querySelectorAll(
+  ".mobile-menu__nav-link, .header-nav-list__link"
+);
 
 if (links.length > 0) {
   links.forEach((link) => {
@@ -30,7 +32,9 @@ if (links.length > 0) {
       //   перенаправляем к якорю
       const target = document.querySelector(link.getAttribute("href"));
       if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth" });
+        }, 10);
       }
     });
   });
