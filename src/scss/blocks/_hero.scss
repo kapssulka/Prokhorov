@@ -1,0 +1,164 @@
+@use "../_vars.scss" as *;
+
+.hero {
+  min-height: 100vh;
+  background-image: url("../../../public/images/hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+
+  @media (max-width: $bp-laptop) {
+    background-image: url("../../../public/images/hero-adaptive.png");
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding-top: clamp(320px, 15%, 100vh);
+
+    @media (max-width: $bp-laptop) {
+      display: block;
+    }
+
+    @media (max-width: $bp-mobile) {
+      padding-top: 241px;
+    }
+  }
+  &__top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: Instrument Serif;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 60px;
+    line-height: 90%;
+    letter-spacing: -2%;
+    text-align: center;
+
+    margin-bottom: 40px;
+    width: 100%;
+
+    @media (max-width: $bp-laptop) {
+      padding-top: 176px;
+    }
+
+    @media (max-width: $bp-tablet) {
+      padding-top: 96px;
+    }
+
+    @media (max-width: $bp-mobile) {
+      font-size: 36px;
+      padding-top: 0;
+    }
+
+    .svg-group {
+      margin-bottom: 8px;
+    }
+
+    .left-sub-text,
+    .right-sub-text {
+      position: absolute;
+      top: 140px;
+
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: -4%;
+
+      @media (max-width: $bp-laptop) {
+        top: 0;
+      }
+      @media (max-width: $bp-mobile) {
+        display: none;
+      }
+    }
+    .left-sub-text {
+      left: 0;
+    }
+    .right-sub-text {
+      right: 0;
+    }
+  }
+
+  &__second-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 8px;
+
+    margin-bottom: 24px;
+    text-align: center;
+
+    .nowrap {
+      white-space: nowrap;
+      overflow: hidden; /* обрезает лишнее */
+      text-overflow: ellipsis; /* показывает ... если не помещается */
+    }
+
+    div {
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: -4%;
+      text-transform: uppercase;
+    }
+
+    img {
+      @media (max-width: $bp-mobile) {
+        max-width: 135px;
+      }
+    }
+  }
+
+  &__author {
+    font-family: Instrument Serif;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 24px;
+    line-height: 90%;
+    letter-spacing: -4%;
+    text-align: center;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    padding-bottom: 40px;
+    margin-top: 60px;
+
+    @media (max-width: $bp-laptop) {
+      margin-top: 180px;
+    }
+
+    @media (max-width: $bp-mobile) {
+      margin-top: 110px;
+    }
+  }
+
+  &__scroll {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 110.00000000000001%;
+    letter-spacing: -4%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
