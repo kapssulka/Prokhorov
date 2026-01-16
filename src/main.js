@@ -6,3 +6,4 @@ import "modern-css-reset";
 import "./js/menuBurger";
 import "./js/currentTime";
 import "./js/worksViewMode";
+import "./js/testimonialsTrack";
