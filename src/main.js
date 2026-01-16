@@ -7,3 +7,5 @@ import "./js/menuBurger";
 import "./js/currentTime";
 import "./js/worksViewMode";
 import "./js/testimonialsTrack";
+
+import "./js/base";

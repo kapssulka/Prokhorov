@@ -19,7 +19,7 @@ if (menuBtnClose && mobileMenu) {
 // переход по ссылкам-якорям
 
 const links = document.querySelectorAll(
-  ".mobile-menu__nav-link, .header-nav-list__link"
+  ".mobile-menu__nav-link, .header-nav-list__link, .js-anchor-link"
 );
 
 if (links.length > 0) {
