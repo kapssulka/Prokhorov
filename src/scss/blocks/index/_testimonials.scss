@@ -1,4 +1,5 @@
-@use "../vars" as *;
+@use "../../base/vars" as *;
+
 .testimonials {
   &__title-block {
     display: flex;

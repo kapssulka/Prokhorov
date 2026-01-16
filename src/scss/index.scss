@@ -1,0 +1,12 @@
+@use "base/base";
+@use "base/components";
+// blocks
+
+@use "blocks/header";
+@use "blocks/index/hero";
+@use "blocks/index/about";
+@use "blocks/index/works";
+@use "blocks/index/services";
+@use "blocks/index/testimonials";
+@use "blocks/index/contact";
+@use "blocks/footer";
