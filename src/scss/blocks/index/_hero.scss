@@ -2,14 +2,14 @@
 
 .hero {
   min-height: 100vh;
-  background-image: url("../../../public/images/hero.png");
+  background-image: url("../../../../public/images/hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
 
   @media (max-width: $bp-laptop) {
-    background-image: url("../../../public/images/hero-adaptive.png");
+    background-image: url("../../../../public/images/hero-adaptive.png");
   }
 
   &__content {
