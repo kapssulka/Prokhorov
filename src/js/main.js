@@ -7,5 +7,6 @@ import "./modules/menuBurger";
 import "./modules/currentTime";
 import "./modules/worksViewMode";
 import "./modules/testimonialsTrack";
+import "./modules/loader";
 
 import "./modules/base";
