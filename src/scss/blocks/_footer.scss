@@ -129,9 +129,11 @@
 
     transition: all 0.2s ease-in-out;
 
-    &:hover {
-      color: #dddddd;
-      text-decoration: underline;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #dddddd;
+        text-decoration: underline;
+      }
     }
 
     @media (max-width: $bp-laptop) {
