@@ -1,9 +1,11 @@
 const loader = document.querySelector(".js-loader");
 const loaderCount = document.querySelector(".js-loading-count");
+const wrapper = document.querySelector(".js-wrapper");
 
-if (loader && loaderCount) {
+if (loader && loaderCount && wrapper) {
   const body = document.body;
   body.style.overflow = "hidden";
+  wrapper.style.opacity = 0;
 
   const steps = [
     { value: 0, at: 0 },
@@ -33,6 +35,7 @@ if (loader && loaderCount) {
       setTimeout(() => {
         loader.classList.add("animate-hidden");
         body.style.overflow = "";
+        wrapper.style.opacity = 1;
       }, 600);
       setTimeout(() => {
         loader.classList.add("is-hidden");
