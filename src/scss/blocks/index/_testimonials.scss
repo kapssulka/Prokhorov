@@ -87,7 +87,8 @@
     align-items: center;
     gap: 12px;
 
-    animation: scroll var(--duration) linear infinite;
+    will-change: transform; /* предупреждаем браузер о предстоящей анимации */
+    transform: translate3d(0, 0, 0); /* сразу создаём GPU-слой для плавности */
   }
 
   &__bottom-text {
@@ -191,14 +192,5 @@
     letter-spacing: -2%;
 
     color: #8b8b8b;
-  }
-}
-
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(var(--offset));
   }
 }

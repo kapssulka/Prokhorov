@@ -1,24 +1,29 @@
-const track = document.querySelector(".js-track");
+window.addEventListener("load", () => {
+  const track = document.querySelector(".js-track");
+  if (!track) return;
 
-if (track) {
   const cards = Array.from(track.children);
   const gap = parseFloat(getComputedStyle(track).gap);
 
-  cards.forEach((card) => {
-    track.appendChild(card.cloneNode(true));
-  });
+  // клонируем карточки для бесконечной прокрутки
+  cards.forEach((card) => track.appendChild(card.cloneNode(true)));
 
-  const singleSetWidth = cards.reduce((sum, el) => {
-    const rect = el.getBoundingClientRect();
+  const singleSetWidth = cards.reduce(
+    (sum, el) => sum + el.getBoundingClientRect().width + gap,
+    0,
+  );
 
-    return sum + rect.width + gap;
-  }, 0);
-
-  track.style.setProperty("--offset", `-${singleSetWidth}px`);
-
-  // скорость: 100px в секунду
+  // скорость прокрутки в px/сек
   const speed = 100;
-  const duration = singleSetWidth / speed;
 
-  track.style.setProperty("--duration", `${duration}s`);
-}
+  let start;
+  function animateTrack(timestamp) {
+    if (!start) start = timestamp;
+    const elapsed = (timestamp - start) / 1000; // секунды
+    const offset = (elapsed * speed) % singleSetWidth;
+    track.style.transform = `translate3d(${-offset}px, 0, 0)`;
+    requestAnimationFrame(animateTrack);
+  }
+
+  requestAnimationFrame(animateTrack);
+});
